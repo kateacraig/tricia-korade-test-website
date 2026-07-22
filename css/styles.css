@@ -391,3 +391,40 @@ a { color: var(--navy); }
   .social-row { justify-content: center; }
   .foot-bottom { justify-content: center; text-align: center; margin-top: 30px; }
 }
+
+/* ===========================================================
+   UPDATE-1 ADDITIONS: photos, bio, home video, ways to help
+   =========================================================== */
+
+/* two-column photos (about / contact) */
+.side-photo { width: 100%; height: auto; display: block; border-radius: 18px; box-shadow: 0 16px 40px rgba(1,66,124,.14); }
+
+/* about: pull-quote + strengths */
+.pull-quote { margin: 26px 0; padding: 18px 22px; border-left: 4px solid var(--green); background: var(--tint); border-radius: 0 12px 12px 0; font-family: var(--head); font-weight: 600; font-style: italic; font-size: 18px; line-height: 1.5; color: var(--navy); text-align: left; }
+.strengths-head { font-family: var(--head); font-weight: 700; font-size: 20px; color: var(--navy); margin: 30px 0 14px; }
+.strengths { display: flex; flex-direction: column; gap: 18px; text-align: left; }
+.strength-title { font-family: var(--head); font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 4px; }
+.strength p { font-family: var(--body); font-size: 15.5px; line-height: 1.6; color: var(--muted); margin: 0; }
+
+/* home: video */
+.video-section { background: linear-gradient(180deg,#f3f9fd 0%, #ffffff 100%); }
+.video-lead { font-family: var(--body); font-size: 17px; line-height: 1.6; color: #3a5169; margin: 8px 0 26px; max-width: 640px; }
+.video-frame { position: relative; width: 100%; max-width: 900px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(9,40,70,.18); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* contact: ways to help */
+.help-section { background: var(--tint); }
+.help-intro { max-width: 680px; }
+.help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 26px; }
+.help-item { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: 0 10px 26px rgba(1,66,124,.05); text-align: left; }
+.help-title { font-family: var(--head); font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+.help-item p { font-family: var(--body); font-size: 15px; line-height: 1.55; color: var(--muted); margin: 0; }
+
+@media (max-width: 1024px) {
+  .help-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .help-grid { grid-template-columns: 1fr; }
+  .help-intro { margin-left: auto; margin-right: auto; }
+  .video-frame { margin-left: auto; margin-right: auto; }
+}

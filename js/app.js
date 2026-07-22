@@ -1,5 +1,5 @@
 /* ===========================================================
-   Tricia Korade campaign site — client-side behavior
+   Tricia Korade campaign site: client-side behavior
    - hash routing between the 5 pages
    - active nav state + mobile menu
    - renders repeated data (pillars, platform blocks, steps)
@@ -11,18 +11,18 @@
   var DONATE_URL = '#'; // TODO: replace with the real ActBlue/donation link
 
   var pillars = [
-    { tag: '01', title: 'Connecting in the Community', desc: 'Rebuilding public trust through openness and real partnership.',
-      bullets: ['Rebuild public trust', 'Openness about how & why decisions are made', 'Build partnerships with and within the community'] },
-    { tag: '02', title: 'Balancing Financial Decisions', desc: 'Responsible budgets that are data-driven and people-informed.',
-      bullets: ['Data driven, people informed', 'Visibility to short & long term impacts', 'Increase community input'] },
-    { tag: '03', title: 'Growing Small Businesses', desc: 'Helping local businesses and nonprofits thrive.',
-      bullets: ['Strengthen the support system', 'Stimulate non-profit organizations', 'Invest resources'] }
+    { tag: '01', title: 'Smart Growth & Infrastructure', desc: 'Balancing economic vitality with the natural beauty that makes Johnson City special.',
+      bullets: ['Support infill housing and thoughtful development', 'Advance revenue-generating ideas like the Boone Creek Tourism District', 'Protect green spaces and our Main Street America feel'] },
+    { tag: '02', title: 'Fiscal Stewardship', desc: 'Protecting taxpayers through rigorous, data-driven budget analysis.',
+      bullets: ['Treat property tax increases as an absolute last resort', 'Leverage enterprise funds and cut process inefficiencies', 'Bring 35 years of high-level budget experience to City Hall'] },
+    { tag: '03', title: 'Community & Nonprofits', desc: 'Bridging government, business, and the nonprofits that fill critical gaps.',
+      bullets: ['Address complex issues like homelessness through real partnership', 'Support the small nonprofit sector as an economic driver', 'Rebuild trust between city government and the whole community'] }
   ];
 
   var steps = [
     { n: '01', t: 'Check your registration', body: 'Make sure you’re registered to vote by Monday, Oct 5, 2026. Not sure? Verify your status online in a couple of minutes.' },
     { n: '02', t: 'Know your county & polling place', body: 'Find out which county you live in and where your assigned polling place is. Early-voting sites may differ from Election Day locations.' },
-    { n: '03', t: 'Vote early or on Election Day', body: 'Vote early Oct 14–29, or head to your polling place on Tuesday, Nov 3, 2026. Bring a valid photo ID.' }
+    { n: '03', t: 'Vote early or on Election Day', body: 'Vote early Oct 14 to 29, or head to your polling place on Tuesday, Nov 3, 2026. Bring a valid photo ID.' }
   ];
 
   var PAGES = ['home', 'about', 'platform', 'election', 'contact'];
