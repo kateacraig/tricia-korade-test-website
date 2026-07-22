@@ -135,7 +135,7 @@
     var dotsWrap = root.querySelector('[data-dots]');
     var prevBtn = root.querySelector('[data-prev]');
     var nextBtn = root.querySelector('[data-next]');
-    var idx = 0, timer = null, DELAY = 1500;
+    var idx = 0, timer = null, DELAY = 3000;
 
     var dots = slides.map(function (s, i) {
       var b = document.createElement('button');
