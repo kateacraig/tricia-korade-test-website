@@ -126,11 +126,54 @@
     if (header.classList.contains('nav-open')) closeNav(); else openNav();
   }
 
+  /* ---- about photo carousel ---- */
+  function initCarousel() {
+    var root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    var slides = [].slice.call(root.querySelectorAll('.carousel-slide'));
+    if (slides.length < 2) return;
+    var dotsWrap = root.querySelector('[data-dots]');
+    var prevBtn = root.querySelector('[data-prev]');
+    var nextBtn = root.querySelector('[data-next]');
+    var idx = 0, timer = null, DELAY = 1500;
+
+    var dots = slides.map(function (s, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'carousel-dot';
+      b.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+      b.addEventListener('click', function () { go(i); restart(); });
+      dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      dots.forEach(function (d, i) {
+        d.classList.toggle('is-active', i === idx);
+        d.setAttribute('aria-current', i === idx ? 'true' : 'false');
+      });
+    }
+    function go(i) { idx = (i + slides.length) % slides.length; render(); }   // wraps both ways -> loops
+    function start() { if (!timer) timer = setInterval(function () { go(idx + 1); }, DELAY); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+
+    nextBtn.addEventListener('click', function () { go(idx + 1); restart(); });
+    prevBtn.addEventListener('click', function () { go(idx - 1); restart(); });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+
+    render();
+    start();
+  }
+
   /* ---- init ---- */
   renderPillarsCards();
   renderPlatformBlocks();
   renderSteps();
   wireDonate();
+  initCarousel();
 
   if (hamburger) hamburger.addEventListener('click', toggleNav);
   window.addEventListener('hashchange', route);
